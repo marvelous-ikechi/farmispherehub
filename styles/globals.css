@@ -1,0 +1,106 @@
+/* html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}  */
+
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;   
+  width: 100%; 
+  font-family: "Bold";
+
+}
+
+div.form-container{
+  background-image: url("../static/images/register.jpeg");
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    /* Full height */
+    height: 100vh;
+    /* Center and scale the image nicely */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+form{
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+color: white;
+font-weight: bold;
+/* border: 3px solid #f1f1f1; */
+position: absolute; 
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+height: auto;
+width: auto;
+padding: 30px 20px 30px 20px;
+/* text-align: center */
+}
+
+form div{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type=text], select{
+  color: rgb(214, 214, 214);
+  width: 20rem;
+  height: 50px;
+  background: none;
+  border: 2px solid grey;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  padding: 10px;
+}
+
+
+input[type=text]:focus, select:focus{
+  outline: none;
+}
+
+label{
+  margin-right: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn-div{
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items:center;
+  margin-top: 40px;
+}
+
+.submit-btn{
+  height: 60px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  border: none;
+  background-color: rgb(76, 223, 76);
+}
+
+
+
