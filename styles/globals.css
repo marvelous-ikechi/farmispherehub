@@ -70,6 +70,11 @@ form div{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
+  }
+
+  form{
+    overflow: auto;
   }
 
   form div label{
@@ -133,10 +138,6 @@ label{
   font-weight: 500;
   border: none;
   background-color: rgb(76, 223, 76);
-}
-
-@media screen and(max-width:500px){
-
 }
 
 
