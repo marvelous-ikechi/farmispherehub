@@ -87,6 +87,10 @@ form div{
   form div label{
     text-align: left;
   }
+
+  .submit-btn-div{
+    /* height: 100px; */
+  }
 }
 
 input[type=text], select{
@@ -112,7 +116,7 @@ label{
 }
 
 .submit-btn-div{
-  height: 40px;
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
