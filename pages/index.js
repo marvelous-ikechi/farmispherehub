@@ -45,21 +45,6 @@ export default function Home() {
          </div>
          <div >
              <label>
-               Registration Status
-             </label>
-             <select name="registration-status" id="registration-status">
-                 <option value="registered">Registered</option>
-                 <option value="not-registered">Not Registered</option>
-               </select>
-         </div>
-         {/* <div >
-             <label>
-               Registration Number
-             </label>
-             <input type="text" placeholder="12344567890" />
-         </div> */}
-         <div >
-             <label>
                Size of Farm
              </label>
              <select name="farm-size" id="farm-size">
