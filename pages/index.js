@@ -14,6 +14,7 @@ export default function Home() {
      
     </div>
      <form>
+       <h3>Farmers Registration Form</h3>
          <div>
              <label>
                 First Name
