@@ -71,13 +71,13 @@ export default function Home() {
              <label>
                Farm  Name
              </label>
-             <input type="text" placeholder="Farm XYZ" name="farm_name"  required value={farm_name} onChange={(event) => {setFarmName(event.target.value), console.log(event.target)}}/>
+             <input type="text" placeholder="Farm XYZ" name="farm_name"  required value={farm_name} onChange={(event) => setFarmName(event.target.value)}/>
          </div>
          <div >
              <label>
                Farm  Type
              </label>
-             <select name="farm-type" id="farm-type" name="farm_type" required value={farm_type} onChange={(event) => setFarmType(event.target.value)}>
+             <select name="farm-type" id="farm-type" required value={farm_type} onChange={(event) => setFarmType(event.target.value)}>
                  <option value="fish">Fish Farm</option>
                  <option value="snail">Snail Farm</option>
                  <option value="poultry">Poultry</option>
@@ -88,7 +88,7 @@ export default function Home() {
              <label>
                Size of Farm
              </label>
-             <select name="farm-size" id="farm-size" name="farm_size" value={farm_size} onChange={(event) => setFarmSize(event.target.value)} required>
+             <select id="farm-size" name="farm_size" value={farm_size} onChange={(event) => setFarmSize(event.target.value)} required>
                  <option value="1-10">1-10</option>
                  <option value="11-50">11-50</option>
                  <option value="51-100">51-100</option>
