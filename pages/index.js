@@ -17,7 +17,7 @@ export default function Home() {
   // Submit handler
   const submitHandler = async (event) =>{
     event.preventDefault();
-    await axios.post('http://localhost:3000/api/submit', {
+    await axios.post('/api/submit', {
       first_name, last_name, farm_name, farm_type, farm_size, products
       })
       .then(
