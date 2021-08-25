@@ -62,8 +62,9 @@ font-family: 'Poppins', sans-serif;
 
 h3{
   text-align: center;
-  color: Green;
-  opacity: 0.6;
+  color: white;
+  opacity: 0.9;
+  font-size: 1rem;
   margin-bottom: 5px;
 }
 
