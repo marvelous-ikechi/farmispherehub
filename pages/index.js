@@ -36,7 +36,7 @@ export default function Home() {
       ).catch(
         error => {
           console.log(error);
-          toast('Please re-check all input fields', {type:'error'}) 
+          alert('Please re-check all input fields') 
         }
       )
   }
