@@ -17,7 +17,7 @@ export default function Home() {
   // Submit handler
   const submitHandler = async (event) =>{
     event.preventDefault();
-    await axios.post('/api/submit', {
+    await axios.post('https://farmispherehub-r5qv9its3-marvelous-ikechi.vercel.app/api/submit', {
       first_name, last_name, farm_name, farm_type, farm_size, products
       })
       .then(
