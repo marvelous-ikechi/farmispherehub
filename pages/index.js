@@ -22,8 +22,8 @@ export default function Home() {
   // Submit handler
   const submitHandler = async (event) =>{
     event.preventDefault();
-    await axios.post('https://farmispherehub-r5qv9its3-marvelous-ikechi.vercel.app/api/submit', {
-      first_name, last_name, farm_name, farm_type, farm_size, products
+    await axios.post('/api/submit', {
+      first_name, last_name, farm_name, farm_type, farm_size, products, stateValue, LGAValue
       })
       .then(
         response =>{
@@ -36,12 +36,14 @@ export default function Home() {
               setFarmSize('');
               setFarmType('');
               setProducts('');
+              setLGAValue('');
+              setStateValue('');
           }
         }
       ).catch(
         error => {
           console.log(error);
-          alert('Please re-check all input fields') 
+          alert(error) 
         }
       )
   }
@@ -54,7 +56,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
       </Head>
 
-      {console.log(NaijaStates.all())}
+      {/* {console.log(NaijaStates.all())} */}
 
 
 {/* background image */}

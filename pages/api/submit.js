@@ -16,7 +16,8 @@ const handler = async (req, res) => {
       });
   }
   try {
-    const { first_name, last_name, farm_name, farm_type, farm_size, products } = req.body;
+    const { first_name, last_name, farm_name, farm_type, farm_size, products, stateValue, LGAValue } = req.body;
+    console.log(req.body)
     await notion.pages.create({
       parent: {
         database_id: process.env.NOTION_DATABASE_ID,
