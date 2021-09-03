@@ -3,7 +3,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios'
+import axios from 'axios';
+import NaijaStates from 'naija-state-local-government';
+import { Options } from 'react-naija-states'
+// import 'react-naija-states/dist/index.css'
 
 export default function Home() {
   const [first_name, setFirstName] = useState('');
@@ -12,6 +15,8 @@ export default function Home() {
   const [farm_type, setFarmType] = useState('');
   const [farm_size, setFarmSize] = useState('');
   const [products, setProducts] = useState('');
+  const [stateValue, setStateValue] = useState('');
+	const [LGAValue, setLGAValue] = useState('');
 
 
   // Submit handler
@@ -49,6 +54,9 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
       </Head>
 
+      {console.log(NaijaStates.all())}
+
+
 {/* background image */}
     <div className="form-container">
     
@@ -85,6 +93,26 @@ export default function Home() {
                </select>
          </div>
          <div >
+            <label htmlFor="state">States</label>
+            <select
+              name='state'
+              placeholder='Please select a State'
+              value={stateValue || ''}
+              onChange={(event) => setStateValue(event.target.value)} >
+                <Options type='state'/>
+            </select>
+         </div>
+         <div>
+              <label htmlFor="lga">Local Government Areas</label>
+              <select
+                name='lgs'
+                placeholder='Please select a LGA'
+                value={LGAValue || ''}
+                onChange={(event) => setLGAValue(event.target.value)} >
+                  <Options type='lga' state={stateValue} />
+              </select>
+         </div>
+         <div>
              <label>
                Size of Farm
              </label>
