@@ -22,30 +22,35 @@ export default function Home() {
   // Submit handler
   const submitHandler = async (event) =>{
     event.preventDefault();
-    await axios.post('/api/submit', {
-      first_name, last_name, farm_name, farm_type, farm_size, products, stateValue, LGAValue
-      })
-      .then(
-        response =>{
-          console.log(response.data);
-          if (response.status === 201){
-              alert("Registration was successful");
-              setFirstName('');
-              setLastName('');
-              setFarmName('');
-              setFarmSize('');
-              setFarmType('');
-              setProducts('');
-              setLGAValue('');
-              setStateValue('');
+    try{
+      await axios.post('/api/submit', {
+        first_name, last_name, farm_name, farm_type, farm_size, products, stateValue, LGAValue
+        })
+        .then(
+          response =>{
+            console.log(response.data);
+            if (response.status === 201){
+                alert("Registration was successful");
+                setFirstName('');
+                setLastName('');
+                setFarmName('');
+                setFarmSize('');
+                setFarmType('');
+                setProducts('');
+                setLGAValue('');
+                setStateValue('');
+            }
           }
-        }
-      ).catch(
-        error => {
-          console.log(error);
-          alert(error) 
-        }
-      )
+        ).catch(
+          error => {
+            console.log(error);
+            alert(error) 
+          }
+        )
+    }
+    catch(error){
+        console.log(error)
+    }
   }
 
   return (
