@@ -43,7 +43,7 @@ export default function Home() {
             console.log(response.data.farmers_id);
             const farmers_id = response.data.farmers_id
             if (response.status === 201){
-            alert( `Congratulations, your farmers id is ${farmers_id}`)
+            alert( `Congratulations, your farmers id is: ${farmers_id}`)
                 setFirstName('');
                 setLastName('');
                 setFarmName('');
