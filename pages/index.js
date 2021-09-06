@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -5,8 +6,8 @@ import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import NaijaStates from 'naija-state-local-government';
-import { Options } from 'react-naija-states'
-// import 'react-naija-states/dist/index.css'
+import { Options } from 'react-naija-states';
+
 
 export default function Home() {
   const [first_name, setFirstName] = useState('');
@@ -17,20 +18,32 @@ export default function Home() {
   const [products, setProducts] = useState('');
   const [stateValue, setStateValue] = useState('');
 	const [LGAValue, setLGAValue] = useState('');
+  const [address, setAddress] = useState('')
 
 
   // Submit handler
   const submitHandler = async (event) =>{
-    event.preventDefault();
     try{
-      await axios.post('/api/submit', {
-        first_name, last_name, farm_name, farm_type, farm_size, products, stateValue, LGAValue
-        })
+    event.preventDefault();
+
+      await axios.post('https://farmispherehub.herokuapp.com/farmer/', {
+          "first_name": first_name,
+          "last_name": last_name,
+          "farm_name": farm_name,
+          "farm_type": farm_type,
+          "state": stateValue,
+          "lga": LGAValue,
+          "farm_size": farm_size,
+          "products": products,
+          "farm_address": address,
+          "farmers_id": "Rivers/buguma/Fish/2"    
+      })
         .then(
           response =>{
-            console.log(response.data);
+            console.log(response.data.farmers_id);
+            const farmers_id = response.data.farmers_id
             if (response.status === 201){
-                alert("Registration was successful");
+            alert( `Congratulations, your farmers id is ${farmers_id}`)
                 setFirstName('');
                 setLastName('');
                 setFarmName('');
@@ -44,12 +57,12 @@ export default function Home() {
         ).catch(
           error => {
             console.log(error);
-            alert(error) 
+            // alert(error) 
           }
         )
     }
     catch(error){
-        console.log(error)
+        console.log(error)       
     }
   }
 
@@ -60,11 +73,6 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com"  /> 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
       </Head>
-
-      {/* {console.log(NaijaStates.all())} */}
-
-
-{/* background image */}
     <div className="form-container">
     
     </div>
@@ -135,6 +143,12 @@ export default function Home() {
                Products
              </label>
              <input type="text" placeholder="Fish, Snail, chickens" required name="products" value={products} onChange={(event) =>setProducts(event.target.value)}/>
+         </div>
+         <div >
+             <label>
+               Farm Address
+             </label>
+             <input type="text" placeholder="" required name="address" value={address} onChange={(event) =>setAddress(event.target.value)}/>
          </div>
          <div className="submit-btn-div">
              <button className="submit-btn" type="submit">Register</button>
