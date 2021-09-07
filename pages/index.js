@@ -36,7 +36,7 @@ export default function Home() {
           "farm_size": farm_size,
           "products": products,
           "farm_address": address,
-          "farmers_id": "Rivers/buguma/Fish/2"    
+          "farmers_id": "Rivers/buguma/Fish/2"
       })
         .then(
           response =>{
@@ -57,26 +57,26 @@ export default function Home() {
         ).catch(
           error => {
             console.log(error);
-            // alert(error) 
+            // alert(error)
           }
         )
     }
     catch(error){
-        console.log(error)       
+        console.log(error)
     }
   }
 
   return (
     <body>
       <Head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" /> 
-        <link rel="preconnect" href="https://fonts.gstatic.com"  /> 
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com"  />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
       </Head>
     <div className="form-container">
-    
+
     </div>
-     <form onSubmit={submitHandler}>    
+     <form onSubmit={submitHandler}>
        <h3>Farmers Registration Form</h3>
          <div>
              <label>
@@ -135,7 +135,8 @@ export default function Home() {
                  <option value="1-10">1-10</option>
                  <option value="11-50">11-50</option>
                  <option value="51-100">51-100</option>
-                 <option value="above 100">100 and above</option>
+                 <option value="100-1000">100-1000</option>
+                 <option value="above 100">Above 1000</option>
                </select>
          </div>
          <div >
