@@ -75,6 +75,8 @@ form div {
 
 @media screen and (max-width: 500px) {
 
+
+
     div.form-container {
         /* Add the blur effect */
         filter: blur(8px);
@@ -112,7 +114,6 @@ form div {
         justify-content: space-between;
         align-items: center;
     }
-
 }
 
 input[type=text], select {
@@ -155,4 +156,9 @@ label {
     background-color: rgb(76, 223, 76);
 }
 
+/*@media screen and (max-width: 500px){*/
+/*    body{*/
+/*        display: none;*/
+/*    }*/
+/*}*/
 

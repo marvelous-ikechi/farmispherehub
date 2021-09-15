@@ -12,6 +12,7 @@ import { Options } from 'react-naija-states';
 export default function Home() {
   const [first_name, setFirstName] = useState('');
   const [last_name, setLastName] = useState('');
+  const [phone, setPhone] = useState('')
   const [farm_name, setFarmName] = useState('');
   const [farm_type, setFarmType] = useState('');
   const [farm_size, setFarmSize] = useState('');
@@ -36,12 +37,14 @@ export default function Home() {
           "farm_size": farm_size,
           "products": products,
           "farm_address": address,
-          "farmers_id": "Rivers/buguma/Fish/2"
+          "farmers_id": "Rivers/buguma/Fish/2",
+          "phone": phone
+
       })
         .then(
           response =>{
             console.log(response.data.farmers_id);
-            const farmers_id = response.data.farmers_id
+            const farmers_id = response.data.id
             if (response.status === 201){
             alert( `Congratulations, your farmers id is: ${farmers_id}`)
                 setFirstName('');
@@ -52,6 +55,7 @@ export default function Home() {
                 setProducts('');
                 setLGAValue('');
                 setStateValue('');
+                setPhone('');
             }
           }
         ).catch(
@@ -92,6 +96,12 @@ export default function Home() {
          </div>
          <div >
              <label>
+                 Phone
+             </label>
+             <input type="text" placeholder="0901234568" name="last_name" required value={phone} onChange={(event) => setPhone(event.target.value)}/>
+         </div>
+         <div >
+             <label>
                Farm  Name
              </label>
              <input type="text" placeholder="Farm XYZ" name="farm_name"  required value={farm_name} onChange={(event) => setFarmName(event.target.value)}/>
@@ -105,6 +115,7 @@ export default function Home() {
                  <option value="snail">Snail Farm</option>
                  <option value="poultry">Poultry</option>
                  <option value="rabbit">Rabbit Farm</option>
+                 <option value="rabbit">Sea Food</option>
                </select>
          </div>
          <div >
