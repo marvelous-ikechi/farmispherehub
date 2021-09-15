@@ -115,7 +115,7 @@ export default function Home() {
                  <option value="snail">Snail Farm</option>
                  <option value="poultry">Poultry</option>
                  <option value="rabbit">Rabbit Farm</option>
-                 <option value="rabbit">Sea Food</option>
+                 <option value="rabbit">SeaFood</option>
                </select>
          </div>
          <div >
